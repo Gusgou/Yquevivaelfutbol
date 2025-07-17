@@ -53,7 +53,7 @@ def enviar_correo(destinatario, asunto, mensaje):
         print(f"Error al enviar correo: {e}")
 
 
-@app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
