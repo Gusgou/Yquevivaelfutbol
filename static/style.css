@@ -1,0 +1,60 @@
+body {
+  background: url('/static/cancha.jpg') center center fixed no-repeat;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 2rem auto;
+  width: 95%;
+  max-width: 800px;
+  box-shadow: 0 0 15px #222;
+}
+
+input, select, button {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  width: 90%;
+  max-width: 400px;
+  font-size: 1rem;
+  display: block;
+  border-radius: 8px;
+  border: none;
+}
+
+a, button {
+  background-color: #4f7b83;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover, button:hover {
+  background-color: #008ba3;
+}
+
+.navbar {
+  background-color: #004d40;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navbar a {
+  color: rgb(255, 255, 255);
+  margin: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
