@@ -1,0 +1,21 @@
+{
+    "jugadores": [
+        {
+            "nombre": "Gus",
+            "email": "gusgoumaz@gmail.com",
+            "puesto": "defensor",
+            "pierna": "ambas",
+            "password": "gus001",
+            "historico_puntajes": []
+        },
+        {
+            "nombre": "admin",
+            "email": "yquevivaelfutbol@gmail.com",
+            "puesto": "delantero",
+            "pierna": "ambas",
+            "password": "admin123",
+            "historico_puntajes": []
+        }
+    ],
+    "partidos": []
+}
