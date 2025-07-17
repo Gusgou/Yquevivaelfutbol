@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anotarse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    {% include 'navbar.html' %}
+    <h1>Inscribirse al Partido</h1>
+    <p>Partido el {{ partido.fecha }}</p>
+    <form method="post">
+      <button type="submit">Anotarse</button>
+    </form>
+  </div>
+</body>
+</html>
+
+

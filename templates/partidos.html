@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Partidos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .partido {
+      background: #458a9b;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+    .partido p {
+      margin: 0 0 1rem 0;
+    }
+    .partido form,
+    .partido a {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% include 'navbar.html' %}
+    <h1>Partidos Disponibles</h1>
+
+    {% for partido in partidos %}
+      <div class="partido">
+        <p><strong>Fecha:</strong> {{ partido.fecha }} |
+           <strong>Hora:</strong> {{ partido.hora }} |
+           <strong>Sede:</strong> {{ partido.sede }} |
+           <strong>Jugadores por equipo:</strong> {{ partido.jugadores_por_equipo }}</p>
+
+        {% if session['usuario'] in partido.inscriptos | map(attribute='nombre') %}
+          <form action="{{ url_for('darse_baja', partido_id=loop.index0) }}" method="post" style="display:inline;" onsubmit="return confirm('¿Estás seguro que deseas darte de baja?');">
+            <button type="submit">Darse de baja</button>
+          </form>
+        {% else %}
+          <a href="{{ url_for('anotarse', partido_id=loop.index0) }}">Anotarse</a>
+        {% endif %}
+
+        <a href="{{ url_for('equipos', partido_id=loop.index0) }}">Ver Equipos</a>
+        <a href="{{ url_for('destacado', partido_id=loop.index0) }}">Jugador Destacado</a>
+
+        {% if session['usuario'] == 'admin' %}
+          <form action="{{ url_for('eliminar_partido', partido_id=loop.index0) }}" method="post" style="display:inline;" onsubmit="return confirm('¿Seguro que deseas eliminar este partido?');">
+            <button type="submit">Eliminar</button>
+          </form>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

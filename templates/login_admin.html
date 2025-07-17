@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    {% include 'navbar.html' %}
+    <h2>Ingreso Administrador</h2>
+
+    <form method="post">
+      <label for="nombre">Usuario:</label><br>
+      <input type="text" id="nombre" name="nombre" required><br><br>
+
+      <label for="password">Contraseña:</label><br>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <p><a href="{{ url_for('login') }}">Volver al Login</a></p>
+  </div>
+</body>
+</html>

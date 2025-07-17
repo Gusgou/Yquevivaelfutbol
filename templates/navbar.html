@@ -1,0 +1,11 @@
+<div class="navbar">
+  <a href="{{ url_for('index') }}">🏠 Inicio</a>
+  <a href="{{ url_for('partidos') }}">📅 Partidos</a>
+  <a href="{{ url_for('crear_partido') }}">➕ Crear Partido</a>
+
+  {% if session.get('usuario') == 'admin' %}
+    <a href="{{ url_for('login_admin') }}">🛠 Admin</a>
+  {% endif %}
+
+  <a href="{{ url_for('logout') }}">🚪 Cerrar Sesión</a>
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear Partido</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    {% include 'navbar.html' %}
+    <h1>Crear Nuevo Partido</h1>
+    <form method="post">
+      <input name="fecha" type="date" required>
+      <input name="hora" type="time" required>
+      <input name="sede" required placeholder="Sede del partido">
+      <label for="jugadores_por_equipo">Jugadores por equipo:</label>
+      <select name="jugadores_por_equipo" required>
+        <option value="8">8 por equipo (1-3-2-2)</option>
+        <option value="10">10 por equipo (1-4-3-2)</option>
+      </select>
+      <button type="submit">Crear Partido</button>
+    </form>
+  </div>
+</body>
+</html>
